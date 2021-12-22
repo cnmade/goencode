@@ -720,7 +720,7 @@ func unsupportedTypeEncoder(e *encodeState, v reflect.Value, _ encOpts) {
 	if UnsupportedBehaviour != UnsupportedBehaviourWithError {
 		switch UnsupportedBehaviour {
 		case UnsupportedBehaviourWithSprintf:
-			e.WriteString(fmt.Sprintf("%+v", v))
+			e.WriteString(fmt.Sprintf("'%+v'", v))
 		case UnsupportedBehaviourWithNone:
 			e.WriteString(UnsupportedBehaviourWithNone)
 		case UnsupportedBehaviourWithNull:
